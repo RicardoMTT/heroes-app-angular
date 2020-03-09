@@ -1,0 +1,21 @@
+<div class="row p-3" *ngIf="heroeArr.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados de <strong>{{ terminoBuscar }}</strong>
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    
+    <div class="card" *ngFor="let heroe of heroeArr">
+        <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">{{ heroe.nombre | lowercase  }}</h5>
+          <p class="card-text">{{ heroe.bio }}</p>
+          <p class="card-text"><small class="text-muted">{{ heroe.aparicion| date:'y' }}</small></p>
+          <a href=""  class="btn btn-outline-primary btn-block">Ver mas</a>
+        </div>
+
+      </div>
+    
+</div>
